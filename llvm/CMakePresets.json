@@ -1,0 +1,59 @@
+{
+  "version": 6,
+  "configurePresets": [
+    {
+      "name":      "default",
+      "hidden":     true,
+      "generator": "Ninja",
+      "warnings": {
+        "dev":      false
+      },
+      "cacheVariables": {
+
+        "CMAKE_CXX_STANDARD":              "17",
+
+        "BUILD_SHARED_LIBS":               "ON",
+
+        "LLVM_DEFAULT_TARGET_TRIPLE":      "avr-unknown-unkown",
+        "LLVM_TARGETS_TO_BUILD":           "AVR",
+        "LLVM_ENABLE_PROJECTS":            "clang",
+        "LLVM_ENABLE_RUNTIMES":            "",
+        "LLVM_ENABLE_Z3_SOLVER":           "ON",
+        "LLVM_OPTIMIZED_TABLEGEN":         "ON"
+      }
+    },
+    {
+      "name":      "debug",
+      "inherits":  "default",
+      "binaryDir": "../build/debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE":       "Debug",
+        "LLVM_ENABLE_ASSERTIONS": "ON"
+      }
+    },
+    {
+      "name":      "reldebug",
+      "inherits":  "default",
+      "binaryDir": "../build/reldebug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
+      "name":      "release",
+      "inherits":  "default",
+      "binaryDir": "../build/release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name":      "relminsize",
+      "inherits":  "default",
+      "binaryDir": "../build/relminsize",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "MinSizeRel"
+      }
+    }
+  ]
+}
