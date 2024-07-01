@@ -1,0 +1,48 @@
+{
+  "name": "LLVM Project",
+  "build": {
+  	"dockerfile": "Dockerfile",
+  	"args": {
+  		"USER_UID": "1001",
+  		"USER_GID": "1001"
+  	}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker",
+        "ms-vscode.cpptools-extension-pack"
+      ],
+      "settings": {
+
+        "cmake.additionalCompilerSearchDirs": [
+          "/usr/lib/llvm18/bin"
+        ],
+        "cmake.allowCommentsInPresetsFile": false,
+        "cmake.allowUnsupportedPresetsVersions": false,
+        "cmake.automaticReconfigure": true,
+        "cmake.autoSelectActiveFolder": true,
+        "cmake.buildBeforeRun": true,
+        "cmake.clearOutputBeforeBuild": true,
+        "cmake.cmakePath": "/usr/bin/cmake",
+        "cmake.cmakeCommunicationMode": "legacy",
+        "cmake.configureOnEdit": false,
+        "cmake.configureOnOpen": false,
+        "cmake.ctest.allowParallelJobs": true,
+        "cmake.ctest.testExplorerIntegrationEnabled": true,
+        "cmake.enableTraceLogging": false,
+        "cmake.exportCompileCommandsFile": true,
+        "cmake.launchBehavior": "reuseTerminal",
+        "cmake.loggingLevel": "info",
+        "cmake.options.statusBarVisibility": "compact",
+        "cmake.outputLogEncoding": "auto",
+        "cmake.parallelJobs": 0,
+        "cmake.saveBeforeBuild": true,
+        "cmake.showOptionsMovedNotification": false,
+        "cmake.showSystemKits": false,
+        "cmake.sourceDirectory": "${workspaceFolder}/llvm",
+        "cmake.useCMakePresets": "always"      }
+    }
+  },
+  "remoteUser": "coder"
+}
