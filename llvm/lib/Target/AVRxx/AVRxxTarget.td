@@ -33,7 +33,7 @@ include "llvm/Target/Target.td"
 
 /*===------------------------ Define Register Info -----------------------===*/
 
-//include "AVRxxRegisterInfo.td"
+include "AVRxxRegisterInfo.td"
 
 
 /*===----------------------- Define instruction set ----------------------===*/

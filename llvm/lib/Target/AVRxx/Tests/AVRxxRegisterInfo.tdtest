@@ -1,0 +1,6 @@
+// Verify that exactly 32 register records were defined with names matching
+// the expected range R0-R32.
+RUN:            llvm-tblgen -print-records  -I .. -I ../../../../include ../AVRxxTarget.td | FileCheck %s
+
+CHECK-COUNT-32: {{^def[[:space:]]+R(0|[12][0-9]?|3[01]?|[4-9])[[:space:]]+{.+Register}}
+CHECK-NOT:      {{^def[[:space:]]+R(0|[12][0-9]?|3[01]?|[4-9])[[:space:]]+{.+Register}}
